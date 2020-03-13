@@ -40,13 +40,23 @@ Demonstrate your understanding of this Sprint's concepts by answering the follow
 
 - [ ] Mention two parts of Express that you learned about this week.
 
+A: Two parts that I learned about Express are built-in middleware and routing.
+
 - [ ] Describe Middleware?
+
+A: Middleware is software that acts as a bridge between an operating system or database and applications, especially on a network.
 
 - [ ] Describe a Resource?
 
+A: A Resource is anything we can draw upon for more data or information.
+
 - [ ] What can the API return to help clients know if a request was successful?
 
+A: A success status such a 200 or 201 along with a message clarifying the success.
+
 - [ ] How can we partition our application into sub-applications?
+
+A: We can partition our application into sub-applications through the use of module.exports, we can create many different sub-applications for different purposes and then import them amongst our application to provide different functions.
 
 ## Minimum Viable Product
 
