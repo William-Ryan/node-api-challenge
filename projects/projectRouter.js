@@ -12,6 +12,43 @@ router.get("/", (req, res) => {
             message: "The Projects could not be displayed"
         })
     })
+});
+
+router.post("/", (req, res) => {
+    Projects.insert(req.body)
+    .then(project => {
+        res.status(201).json(project)
+    })
+    .catch(err => {
+        console.log(err);
+        res.status(500).json({ message: "Error adding the Project" })
+    })
+});
+
+router.delete("/:id", (req, res) => {
+    Projects.remove(req.params.id)
+    .then(() => {
+        res.status(200).json({ message: "The Project has been removed"})
+    })
+    .catch(err => {
+        console.log("Error: ", err)
+        res.status(500).json({
+            message: "The Project could not be removed"
+        })
+    })    
+})
+
+router.put("/:id", (req, res) => {
+    Projects.update(req.params.id, req.body)
+    .then(() => {
+        res.status(200).json({ message: "Project has been updated" })
+    })
+    .catch(err => {
+        console.log("Error: ", err)
+        res.status(500).json({
+            message: "The Project could not be updated"
+        })
+    })
 })
 
 module.exports = router
