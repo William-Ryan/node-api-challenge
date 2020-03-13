@@ -51,4 +51,17 @@ router.put("/:id", (req, res) => {
     })
 })
 
+router.get("/:id/actions", (req, res) => {
+    Projects.getProjectActions(req.params.id)
+    .then(action => {
+        res.status(200).json(action)
+    })
+    .catch(err => {
+        console.log("Error: ", err)
+        res.status(500).json({
+            message: "The Project Actions could not be retrieved"
+        })
+    })
+})
+
 module.exports = router
